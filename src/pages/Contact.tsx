@@ -10,6 +10,7 @@ const Contact: React.FC = () => {
     eventType: '',
     message: ''
   });
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,7 +30,7 @@ const Contact: React.FC = () => {
     }
 
     try {
-      // Save email to Supabase
+      // --- SAVE TO SUPABASE ---
       const { error } = await supabase
         .from('email_list')
         .insert([
@@ -37,18 +38,40 @@ const Contact: React.FC = () => {
             email: formData.email,
             name: formData.name,
             source: 'contact_form',
-            event_type: formData.eventType
+            event_type: formData.eventType,
+            phone: formData.phone,
+            message: formData.message
           }
         ]);
 
-      if (error && error.code !== '23505') { // Ignore duplicate email errors
+      // Ignore duplicate email errors
+      if (error && error.code !== '23505') {
         throw error;
       }
 
-      // Show success message
-      alert('Thank you! Your message has been sent successfully.');
+      // --- SEND EMAIL VIA EMAILJS ---
+      const emailResult = await sendContactEmail(formData);
       
-      // Reset form
+      if (!emailResult.success) {
+        // Create formatted subject & body
+        const subject = encodeURIComponent(`New Contact - ${formData.name}`);
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\n` +
+          `Email: ${formData.email}\n` +
+          `Phone: ${formData.phone}\n` +
+          `Event Type: ${formData.eventType}\n\n` +
+          `Message:\n${formData.message}`
+        );
+
+        // Fallback
+        const mailtoLink = `mailto:kelsarentalsevent@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = mailtoLink;
+      }
+
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 4000);
+
+      // --- RESET FORM ---
       setFormData({
         name: '',
         email: '',
@@ -57,33 +80,8 @@ const Contact: React.FC = () => {
         message: ''
       });
 
-      // Send email via EmailJS
-      const emailResult = await sendContactEmail(formData);
-      
-      if (!emailResult.success) {
-        console.error('Email sending failed:', emailResult.error);
-        // Fallback to mailto if EmailJS fails
-        const subject = encodeURIComponent(`New Contact Form Submission - ${formData.name}`);
-        const body = encodeURIComponent(
-          `Dear Kelsa Events Team,\n\n` +
-          `You have received a new contact form submission from your website:\n\n` +
-          `CONTACT DETAILS:\n` +
-          `Name: ${formData.name}\n` +
-          `Email: ${formData.email}\n` +
-          `Phone: ${formData.phone}\n` +
-          `Event Type: ${formData.eventType}\n\n` +
-          `MESSAGE:\n` +
-          `${formData.message}\n\n` +
-          `---\n` +
-          `This email was sent from the Kelsa Events website contact form.\n` +
-          `Please reply directly to ${formData.email} to respond to this inquiry.`
-        );
-        const mailtoLink = `mailto:kelsarentalsevent@gmail.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-      }
-
     } catch (error) {
-      console.error('Error saving email:', error);
+      console.error(error);
       alert('There was an error. Please try again.');
     }
   };
@@ -645,6 +643,61 @@ const Contact: React.FC = () => {
           </section>
         </div>
       </main>
+
+      {/* Success Modal */}
+      {showSuccess && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0,0,0,0.5)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10000
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '16px',
+            padding: '2rem',
+            textAlign: 'center',
+            maxWidth: '400px',
+            margin: '1rem',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
+          }}>
+            <div style={{
+              width: '80px',
+              height: '80px',
+              borderRadius: '50%',
+              background: '#4CAF50',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 auto 1rem'
+            }}>
+              <i className="fas fa-check" style={{ color: 'white', fontSize: '2rem' }}></i>
+            </div>
+            <h3 style={{ color: 'var(--primary)', marginBottom: '1rem' }}>Message Sent Successfully!</h3>
+            <p style={{ color: '#666', marginBottom: '1.5rem' }}>Thank you for contacting us. We'll get back to you soon.</p>
+            <button 
+              onClick={() => setShowSuccess(false)}
+              style={{
+                background: 'var(--accent)',
+                color: 'var(--primary)',
+                border: 'none',
+                padding: '0.75rem 2rem',
+                borderRadius: '30px',
+                fontWeight: '600',
+                cursor: 'pointer'
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

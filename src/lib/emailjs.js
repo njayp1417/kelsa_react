@@ -1,15 +1,15 @@
 import emailjs from '@emailjs/browser';
 
 // EmailJS configuration
-const SERVICE_ID = 'service_kelsa';
-const TEMPLATE_ID = 'template_contact';
-const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // You'll get this from EmailJS dashboard
+const SERVICE_ID = 'service_fhtekld';
+const TEMPLATE_ID = 'template_863gkao';
+const PUBLIC_KEY = 'fzYwh6y03rh6G60pA';
 
 export const sendContactEmail = async (formData) => {
   try {
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+      name: formData.name,
+      email: formData.email,
       phone: formData.phone,
       event_type: formData.eventType,
       message: formData.message,

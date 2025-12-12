@@ -306,12 +306,15 @@ header {
   font-weight: 800;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   line-height: 1.2;
+  color: #fff;
 }
 
 .hero-content p {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   margin-bottom: var(--spacing-xl);
   text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  color: #fff;
+  opacity: 0.95;
 }
 
 .hero-buttons {
@@ -369,11 +372,8 @@ header {
 
 /* Section Titles */
 .section-title {
-  font-size: clamp(1.8rem, 3vw, 2.2rem);
-  color: var(--primary);
-  font-weight: 700;
-  margin-bottom: var(--spacing-lg);
   text-align: center;
+  margin-bottom: var(--spacing-xl);
   position: relative;
   padding-bottom: var(--spacing-md);
 }
@@ -391,17 +391,22 @@ header {
 }
 
 .section-title h2 {
-  font-size: clamp(2.5rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
   color: var(--primary);
   font-weight: 700;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
 }
 
 .section-title p {
-  color: var(--primary);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: var(--spacing-xl);
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
 }
 
 .section-subtitle {
@@ -409,6 +414,10 @@ header {
   color: var(--text-light);
   margin-bottom: var(--spacing-xl);
   font-size: 1.1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
 }
 
 /* Cards */
@@ -508,8 +517,8 @@ header {
 }
 
 .intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--text);
 }
 
@@ -972,8 +981,24 @@ textarea.form-control {
 /* Card Grid */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.card .img-real, .card .img-placeholder {
+  width: 100%;
+  height: 200px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--spacing-md);
+  object-fit: cover;
+  transition: transform var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover .img-real {
+  transform: scale(1.05);
 }
 
 /* Map Container */

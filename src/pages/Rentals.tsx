@@ -31,9 +31,11 @@ const Rentals: React.FC = () => {
       <main id="main-content">
         <div className="container">
           {/* Rental Categories */}
-          <section className="section-title">
-            <h2>Our Rental Categories</h2>
-            <p>Everything you need to create the perfect event atmosphere</p>
+          <section className="section" style={{ marginTop: 'var(--spacing-xxl)' }}>
+            <div className="section-title">
+              <h2>Our Rental Categories</h2>
+              <p>Everything you need to create the perfect event atmosphere</p>
+            </div>
           </section>
 
           <div id="rental-categories" className="cards-container">
@@ -99,7 +101,7 @@ const Rentals: React.FC = () => {
           </div>
 
           {/* Furniture Rentals */}
-          <section id="furniture-rentals" className="mt-3 mb-3">
+          <section id="furniture-rentals" className="section">
             <div className="section-title">
               <h2>Furniture Rentals</h2>
             </div>
@@ -167,7 +169,7 @@ const Rentals: React.FC = () => {
           </section>
 
           {/* Decor Rentals */}
-          <section id="decor-rentals" className="mt-3 mb-3">
+          <section id="decor-rentals" className="section">
             <div className="section-title">
               <h2>Venue & Decor Rentals</h2>
             </div>
@@ -221,7 +223,7 @@ const Rentals: React.FC = () => {
           </section>
 
           {/* Tableware Rentals */}
-          <section id="tableware-rentals" className="mt-3 mb-3">
+          <section id="tableware-rentals" className="section">
             <div className="section-title">
               <h2>Tableware & Catering Equipment</h2>
             </div>
@@ -303,7 +305,7 @@ const Rentals: React.FC = () => {
           </section>
 
           {/* Equipment Rentals */}
-          <section id="equipment-rentals" className="mt-3 mb-3">
+          <section id="equipment-rentals" className="section">
             <div className="section-title">
               <h2>Audio Visual & Equipment Rentals</h2>
             </div>

@@ -54,7 +54,7 @@ const Home: React.FC = () => {
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
-          <h1>Creating Unforgettable Events </h1>
+          <h1>Creating Unforgettable Events</h1>
           <p>Your premier partner for professional event planning and equipment rental services in Nigeria</p>
           <div className="hero-buttons">
             <Link to="/events" className="btn" aria-label="Learn about our event services" style={{ background: '#ffb300', color: '#1a237e', padding: '0.8rem 1.5rem', borderRadius: '30px', fontWeight: '600', transition: 'all 0.3s ease', border: 'none', cursor: 'pointer', boxShadow: '0 4px 12px rgba(255,179,0,0.3)', textAlign: 'center', minHeight: '44px', position: 'relative', overflow: 'hidden', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>Event Services</Link>

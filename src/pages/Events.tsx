@@ -33,75 +33,65 @@ const Events: React.FC = () => {
         <div className="container">
           {/* Services Section */}
           <section id="services" className="section">
-            <div className="section-title">Our Event Services</div>
-            <div className="section-subtitle">Comprehensive planning and execution for all types of events</div>
+            <div className="section-title">
+              <h2>Our Event Services</h2>
+              <p>Comprehensive planning and execution for all types of events</p>
+            </div>
             
-            <div className="cards-container">
-            <div className="card animate">
-              <div className="card-badge">Popular</div>
-              <div className="card-img">
+            <div className="card-grid">
+              <div className="card">
+                <div className="card-badge">Popular</div>
                 <img 
                   src="https://plus.unsplash.com/premium_photo-1726797756042-cd73088a0ae9?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2VkZGluZyUyMGNlbGVicmF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" 
                   alt="Wedding Planning" 
+                  className="img-real"
                   loading="lazy"
                 />
-              </div>
-              <div className="card-content">
                 <h3>Wedding Planning</h3>
                 <p>We offer comprehensive wedding planning services, from venue selection to decoration and catering. Let us make your special day truly memorable.</p>
-                <a href="#wedding-details" className="btn">Learn More</a>
+                <a href="#wedding-details" className="btn card-link">Learn More</a>
               </div>
-            </div>
-            
-            <div className="card animate">
-              <div className="card-img">
+              
+              <div className="card">
                 <img 
                   src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop" 
                   alt="Corporate Events" 
+                  className="img-real"
                   loading="lazy"
                 />
-              </div>
-              <div className="card-content">
                 <h3>Corporate Events</h3>
                 <p>Our team specializes in organizing corporate events, including conferences, seminars, and team-building activities tailored to your company's needs.</p>
-                <a href="#corporate-details" className="btn">Learn More</a>
+                <a href="#corporate-details" className="btn card-link">Learn More</a>
               </div>
-            </div>
-            
-            <div className="card animate">
-              <div className="card-img">
+              
+              <div className="card">
                 <img 
                   src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&h=400&fit=crop" 
                   alt="Private Parties" 
+                  className="img-real"
                   loading="lazy"
                 />
-              </div>
-              <div className="card-content">
                 <h3>Private Parties</h3>
                 <p>Celebrate your special occasions with our tailored private party services, including birthdays, anniversaries, and more.</p>
-                <a href="#private-details" className="btn">Learn More</a>
+                <a href="#private-details" className="btn card-link">Learn More</a>
               </div>
-            </div>
-            
-            <div className="card animate">
-              <div className="card-img">
+              
+              <div className="card">
                 <img 
                   src="https://images.unsplash.com/photo-1556125574-d7f27ec36a06?w=600&h=400&fit=crop" 
                   alt="Fundraisers" 
+                  className="img-real"
                   loading="lazy"
                 />
-              </div>
-              <div className="card-content">
                 <h3>Fundraisers</h3>
                 <p>We assist in planning and executing successful fundraising events to help you achieve your goals and maximize donations.</p>
-                <a href="#fundraiser-details" className="btn">Learn More</a>
+                <a href="#fundraiser-details" className="btn card-link">Learn More</a>
               </div>
-            </div>
             </div>
           </section>
 
           {/* Wedding Details */}
-          <section id="wedding-details" className="mt-3 mb-3">
+          <section id="wedding-details" className="section">
             <div className="section-title">
               <h2>Wedding Planning</h2>
             </div>
@@ -237,8 +227,10 @@ const Events: React.FC = () => {
           </section>
 
           {/* Event Planning Process */}
-          <section className="section-title">
-            <h2>Our Event Planning Process</h2>
+          <section className="section">
+            <div className="section-title">
+              <h2>Our Event Planning Process</h2>
+            </div>
           </section>
           
           <div className="features-container">
@@ -275,10 +267,12 @@ const Events: React.FC = () => {
 
           {/* Gallery Section */}
           <section id="gallery" className="section">
-            <div className="section-title">Event Gallery</div>
-            <div className="section-subtitle">Showcasing our successful events and transformations</div>
+            <div className="section-title">
+              <h2>Event Gallery</h2>
+              <p>Showcasing our successful events and transformations</p>
+            </div>
             
-            <div className="cards-container">
+            <div className="card-grid">
               <div className="card">
                 <div className="card-img">
                   <img 
@@ -386,7 +380,9 @@ const Events: React.FC = () => {
 
           {/* Testimonials */}
           <section className="section">
-            <div className="section-title">Client Testimonials</div>
+            <div className="section-title">
+              <h2>Client Testimonials</h2>
+            </div>
             
             <div className="testimonial">
               <div className="testimonial-content">

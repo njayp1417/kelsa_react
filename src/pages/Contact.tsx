@@ -250,8 +250,10 @@ const Contact: React.FC = () => {
         <div className="container">
           {/* Contact Section */}
           <section className="section">
-            <div className="section-title" style={{ padding: '0 1rem' }}>Get In Touch</div>
-            <div className="section-subtitle" style={{ padding: '0 1rem 2rem' }}>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</div>
+            <div className="section-title">
+              <h2>Get In Touch</h2>
+              <p>We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+            </div>
             
             <div className="card-grid">
             {/* Contact Information */}
@@ -459,7 +461,9 @@ const Contact: React.FC = () => {
           
           {/* Location Section */}
           <section className="section">
-            <div className="section-title">Our Location</div>
+            <div className="section-title">
+              <h2>Our Location</h2>
+            </div>
             <div className="map-container" style={{ height: '400px', borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow)' }}>
               <div className="map-placeholder" style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, var(--primary) 0%, #2a3990 100%)', color: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '20px' }}>
                 <i className="fas fa-map-marker-alt" style={{ fontSize: '3rem', color: 'var(--accent)', marginBottom: '1rem' }}></i>
@@ -488,8 +492,10 @@ const Contact: React.FC = () => {
 
           {/* About Us Section */}
           <section id="about-us" className="section">
-            <div className="section-title">About Kelsa Events</div>
-            <div className="section-subtitle">Your trusted partner in creating memorable experiences</div>
+            <div className="section-title">
+              <h2>About Kelsa Events</h2>
+              <p>Your trusted partner in creating memorable experiences</p>
+            </div>
           
           <div 
             className="card" 
@@ -622,7 +628,9 @@ const Contact: React.FC = () => {
           
           {/* FAQ Section */}
           <section className="section">
-            <div className="section-title">Frequently Asked Questions</div>
+            <div className="section-title">
+              <h2>Frequently Asked Questions</h2>
+            </div>
             
             <div className="cards-container">
               <div className="card">

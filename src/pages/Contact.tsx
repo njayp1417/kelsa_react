@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { sendContactEmail } from '../lib/resend';
+import { sendContactEmail } from '../lib/emailjs';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -57,12 +57,12 @@ const Contact: React.FC = () => {
         message: ''
       });
 
-      // Send email via Resend
+      // Send email via EmailJS
       const emailResult = await sendContactEmail(formData);
       
       if (!emailResult.success) {
         console.error('Email sending failed:', emailResult.error);
-        // Fallback to mailto if Resend fails
+        // Fallback to mailto if EmailJS fails
         const subject = encodeURIComponent(`New Contact Form Submission - ${formData.name}`);
         const body = encodeURIComponent(
           `Dear Kelsa Events Team,\n\n` +

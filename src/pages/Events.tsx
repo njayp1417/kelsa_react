@@ -275,43 +275,43 @@ const Events: React.FC = () => {
             <div className="card-grid">
               <div className="card">
                 <div className="card-img">
-                  <img 
-                    src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&h=400&fit=crop" 
-                    alt="Elegant Wedding Setup" 
-                    loading="lazy"
+                  <video 
+                    src="/assets/images/kelsa-video1.mp4" 
+                    controls
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="card-content">
-                  <h3>Elegant Wedding Ceremonies</h3>
-                  <p>Beautiful wedding setups with premium decorations and floral arrangements.</p>
+                  <h3>Event Setup & Decoration</h3>
+                  <p>Watch our professional team transform venues with elegant decorations and setups.</p>
                 </div>
               </div>
               
               <div className="card">
                 <div className="card-img">
-                  <img 
-                    src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=600&h=400&fit=crop" 
-                    alt="Corporate Event" 
-                    loading="lazy"
+                  <video 
+                    src="/assets/images/kelsa-video2.mp4" 
+                    controls
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="card-content">
-                  <h3>Corporate Conferences</h3>
-                  <p>Professional corporate events with modern AV setup and elegant staging.</p>
+                  <h3>Live Event Execution</h3>
+                  <p>Experience the energy and professionalism of our events in action.</p>
                 </div>
               </div>
               
               <div className="card">
                 <div className="card-img">
-                  <img 
-                    src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop" 
-                    alt="Birthday Celebration" 
-                    loading="lazy"
+                  <video 
+                    src="/assets/images/kelsa-video3.mp4" 
+                    controls
+                    style={{ width: '100%', height: '200px', objectFit: 'cover' }}
                   />
                 </div>
                 <div className="card-content">
-                  <h3>Birthday Celebrations</h3>
-                  <p>Colorful and fun birthday party setups with themed decorations.</p>
+                  <h3>Event Highlights</h3>
+                  <p>Memorable moments and successful celebrations we've created for our clients.</p>
                 </div>
               </div>
               
